@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+include "layout/app.php";
+
 // Définir la langue
 if (isset($_GET['lang'])) {
     $_SESSION['lang'] = $_GET['lang'];
@@ -60,41 +62,6 @@ $teams = $pdo->query("SELECT * FROM team")->fetchAll();
 <head>
     <meta charset="UTF-8">
     <title><?= $T['title'] ?></title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: url('imageprojet.jpg') no-repeat center center fixed;
-            background-size: cover;
-            padding: 40px;
-            text-align: center;
-            color: #333;
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.9); /* خلفية شفافة لتسهيل قراءة النص */
-            border-radius: 12px;
-            padding: 30px;
-            max-width: 500px;
-            margin: auto;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        }
-        select, input[type="submit"] {
-            padding: 10px;
-            width: 100%;
-            margin-top: 10px;
-            font-size: 16px;
-        }
-        .lang-select {
-            position: absolute;
-            top: 20px;
-            <?= ($lang === 'arabic') ? 'left' : 'right' ?>: 20px;
-        }
-        .student-info {
-            background-color: #ecf0f1;
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-    </style>
 </head>
 <body>
 
