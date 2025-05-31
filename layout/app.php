@@ -188,7 +188,6 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-            <h1>Hello World </h1>
 
 
 
